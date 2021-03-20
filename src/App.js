@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PokemonListDisplay from './components/PokemonListDisplay';
 
 export default class App extends Component {
   constructor(props) {
@@ -50,21 +51,16 @@ export default class App extends Component {
   };
 
   render() {
-    // console.log(this.state);
-
-    const pokemonList = this.state.pokemon.map((val) => {
-      return (
-        <li key={val.sprite}>
-          Name : {val.name} sprite:{' '}
-          <img src={val.sprite} alt="pokemon sprite" /> ID : {val.id}
-        </li>
-      );
-    });
+    console.log(this.state.pokemon);
 
     return (
       <div>
         <button onClick={this.handleShowPokemon}>Show Pokemon</button>
-        <ol>{this.state.show ? pokemonList : null}</ol>
+        <ol>
+          {this.state.show ? (
+            <PokemonListDisplay pokemon={this.state.pokemon} />
+          ) : null}
+        </ol>
       </div>
     );
   }
