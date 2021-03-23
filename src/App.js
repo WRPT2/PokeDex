@@ -3,6 +3,8 @@ import axios from 'axios';
 import PokemonListDisplay from './components/PokemonListDisplay';
 import Button from './components/Button';
 
+// Will change this from a list to look like a real pokedex
+
 export default class App extends Component {
   constructor(props) {
     super(props);
