@@ -112,7 +112,7 @@ export default class App extends Component {
               this.handlePokemonChange(num);
             }}
           >
-            >
+            {`>`}
           </button>
           <button
             id="prev"
